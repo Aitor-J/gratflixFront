@@ -1,0 +1,100 @@
+.moviesContent {
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    flex-direction: row;
+
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 20rem;
+        margin-top: 1rem;
+
+        & img {
+            width: 15rem;
+            margin: 0 0.5rem 0 0.5rem;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        &:hover img {
+            filter: brightness(0.20);
+        }
+
+        & h2 {
+            position: absolute;
+            color: rgb(255, 255, 255);
+            font-size: 1.4rem;
+            text-shadow: 0.1rem 0.1rem 0.1rem black;
+            opacity: 0;
+            transition: 0.3s;
+            width: 12rem;
+            z-index: 50;
+            text-align: center;
+            transform: translateY(-5rem);
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        &:hover h2 {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        & h4 {
+            position: absolute;
+            color: rgb(0, 0, 0);
+            font-size: 1.4rem;
+            -webkit-text-stroke: 0.02rem rgb(255, 255, 255);
+            opacity: 0;
+            transition: 0.3s;
+            width: 10rem;
+            z-index: 50;
+            text-align: center;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        &:hover h4 {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        &:hover h3 {
+            opacity: 1;
+            transition: 0.5s;
+        }
+
+
+
+
+
+        &__infos {
+            color: wheat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+
+            & h3 {
+
+                color: rgb(255, 255, 255);
+                font-size: 1.4rem;
+                text-shadow: 0.1rem 0.1rem 0.1rem black;
+                opacity: 0;
+                transition: 0.3s;
+                width: 12rem;
+                z-index: 50;
+                text-align: center;
+                cursor: pointer;
+                pointer-events: none;
+                padding: 1rem;
+            }
+        }
+
+    }
+}
