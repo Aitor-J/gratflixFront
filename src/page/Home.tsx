@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { SetStateAction, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MoviesContent from '../components/MoviesContent';
 import IMovie from '../interfaces/IMovie';
 import IType from '../interfaces/IType';
@@ -13,9 +13,11 @@ const Home = () => {
     // APPEL API AXIOS
     const getContent = async () => {
         //APPEL PROMESSE DE NEWSPAGE AXIOS.GET DE L'INTERFACE DE L'URL
+
         const movies = await axios.get<IMovie[]>(
             `http://localhost:3000/api/movies`,
         );
+
 
         const types = await axios.get<IType[]>(
             `http://localhost:3000/api/types`,
