@@ -25,9 +25,9 @@ const Sound = () => {
             onClick={handleChange}>
             {/* integrating the React player input and hiding it */}
             <ReactPlayer
-              url="https://soundcloud.com/elsa-rampazzo/sets/club-sandwich"
-              width="0"
-              height="0"
+              url="https://www.youtube.com/watch?v=VaOijhK3CRU"
+              width="300px"
+              height="300px"
               playing={isPlaying}
               volume={0.3}
             />

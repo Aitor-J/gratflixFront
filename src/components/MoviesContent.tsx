@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import IMovie from '../interfaces/IMovie';
 import IType from '../interfaces/IType';
+import ReactPlayer from 'react-player';
 
 //CALL INTERFACE FRONT NEEDED
 interface MoviesContentProps {
@@ -10,6 +11,13 @@ interface MoviesContentProps {
 }
 
 const MoviesContent = ({ id }: MoviesContentProps) => {
+
+    // state variable to define if music is playing or not
+    const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    // function to revert the value of the variable
+    const handleChange = () => {
+        setIsPlaying(!isPlaying);
+    };
     // JE CRÉE UN USESTATE AFIN DE STOCKER LA DATA ISSU DE L'APPEL AXIOS
     const [movies, setMovies] = useState<IMovie>();
     const [types, setType] = useState<IType>();
@@ -46,6 +54,7 @@ const MoviesContent = ({ id }: MoviesContentProps) => {
             {/* On fais un && des data reçus, si on l'a on envoi, sinon on continu */}
             {movies && types && (
 
+
                 <div className='moviesContent__container'>
 
                     {isClicked ? "" : <h2>{movies.name}</h2>}
@@ -56,6 +65,19 @@ const MoviesContent = ({ id }: MoviesContentProps) => {
                         <h3>{types.name}</h3>
                         <h3>{movies.length}</h3>
                         <h3>{movies.year}</h3>
+                        <h3 role="button"
+                            tabIndex={0}
+                            onKeyPress={handleChange}>Trailer here</h3>
+                        <div className='moviesContent__container__infos__video'>
+                            <ReactPlayer
+                                url={movies.trailer}
+                                width="15rem"
+                                height="auto"
+                                playing={isPlaying}
+                                volume={0.3}
+                                z-index={500}
+                            />
+                        </div>
                     </div>}
 
                     <img src={movies.cover} alt={movies.name} onClick={handleClick}

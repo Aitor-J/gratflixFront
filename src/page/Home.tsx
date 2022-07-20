@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import MoviesContent from '../components/MoviesContent';
+import Sound from '../components/Sound';
 import IMovie from '../interfaces/IMovie';
 
 const Home = () => {
