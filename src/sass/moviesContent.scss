@@ -37,6 +37,8 @@
             transform: translateY(-5rem);
             cursor: pointer;
             pointer-events: none;
+            font-family: 'Made-Medium';
+            letter-spacing: 0.3rem;
         }
 
         &:hover h2 {
@@ -68,6 +70,10 @@
             transition: 0.5s;
         }
 
+        &:hover div {
+            opacity: 1;
+        }
+
 
 
 
@@ -93,14 +99,27 @@
                 cursor: pointer;
                 pointer-events: none;
                 padding: 0.1rem;
+                font-family: 'Made-Medium';
+                letter-spacing: 0.2rem;
+
+                & span {
+                    color: red;
+                }
             }
 
             &__video {
+                margin-top: 2rem;
                 z-index: 300;
                 position: relative;
+                opacity: 0;
             }
-
         }
 
     }
+}
+
+.trailer {
+    z-index: 400;
+    background-color: red;
+    pointer-events: inherit;
 }
