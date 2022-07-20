@@ -11,13 +11,6 @@ interface MoviesContentProps {
 }
 
 const MoviesContent = ({ id }: MoviesContentProps) => {
-
-    // state variable to define if music is playing or not
-    const [isPlaying, setIsPlaying] = useState<boolean>(false);
-    // function to revert the value of the variable
-    const handleChange = () => {
-        setIsPlaying(!isPlaying);
-    };
     // JE CRÉE UN USESTATE AFIN DE STOCKER LA DATA ISSU DE L'APPEL AXIOS
     const [movies, setMovies] = useState<IMovie>();
     const [types, setType] = useState<IType>();
@@ -58,22 +51,16 @@ const MoviesContent = ({ id }: MoviesContentProps) => {
                 <div className='moviesContent__container'>
 
                     {isClicked ? "" : <h2>{movies.name}</h2>}
-                    {isClicked ? "" : <h4>Click me for Details...</h4>}
+                    {isClicked ? "" : <h4>Click for Details...</h4>}
 
                     {isClicked && <div className='moviesContent__container__infos'>
-                        <h3>{movies.director}</h3>
-                        <h3>{types.name}</h3>
-                        <h3>{movies.length}</h3>
-                        <h3>{movies.year}</h3>
-                        <h3 role="button"
-                            tabIndex={0}
-                            onKeyPress={handleChange}>Trailer here</h3>
+                        <h3>This <span>{types.name}</span> Movie has been Directed By <span>{movies.director}</span> in <span>{movies.year}</span> and lasts <span>{movies.length}</span></h3>
+
                         <div className='moviesContent__container__infos__video'>
                             <ReactPlayer
                                 url={movies.trailer}
                                 width="15rem"
                                 height="auto"
-                                playing={isPlaying}
                                 volume={0.3}
                                 z-index={500}
                             />

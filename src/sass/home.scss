@@ -11,10 +11,36 @@
         background: rgb(0, 0, 0);
         background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(48, 48, 48) 60%, rgba(0, 0, 0, 0) 100%);
         padding: 1rem 45vw 1rem 45vw;
-        margin-bottom: 2rem;
         font-family: 'Made-Medium';
         letter-spacing: 1rem;
         text-shadow: 0.2rem 0.2rem 0.2rem black;
+    }
+
+    & label {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: 'Made-Medium';
+        font-size: 1.3rem;
+        letter-spacing: 0.3rem;
+
+    }
+
+    & select {
+        color: red;
+        background-color: black;
+        margin-bottom: 2rem;
+        width: 10rem;
+        height: 2rem;
+        font-size: 1rem;
+        font-family: 'Made-Medium';
+        letter-spacing: 0.2rem;
+        text-align: center;
+        border-radius: 12px;
+        border-color: black;
     }
 
     &__list {
