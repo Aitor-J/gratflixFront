@@ -19,12 +19,12 @@ const MoviesContent = ({ id }: MoviesContentProps) => {
     const getContent = async () => {
         //APPEL PROMESSE DE NEWSPAGE AXIOS.GET DE L'INTERFACE DE L'URL
         const movies = await axios.get<IMovie>(
-            `http://localhost:3000/api/movies/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/movies/${id}`,
         );
 
         //APPEL PROMESSE DE NEWSTYPE AXIOS.GET DE L'INTERFACE DE L'URL
         const types = await axios.get<IType>(
-            `http://localhost:3000/api/types/${movies.data.idType}`,
+            `${import.meta.env.VITE_API_URL}/api/types/${movies.data.idType}`,
         );
 
         setMovies(movies.data);
