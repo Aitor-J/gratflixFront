@@ -15,12 +15,12 @@ const Home = () => {
         //APPEL PROMESSE DE NEWSPAGE AXIOS.GET DE L'INTERFACE DE L'URL
 
         const movies = await axios.get<IMovie[]>(
-            `http://localhost:3000/api/movies`,
+            `${import.meta.env.VITE_API_URL}/api/movies`,
         );
 
 
         const types = await axios.get<IType[]>(
-            `http://localhost:3000/api/types`,
+            `${import.meta.env.VITE_API_URL}/api/types`,
         );
         setMovies(movies.data);
         setType(types.data);
